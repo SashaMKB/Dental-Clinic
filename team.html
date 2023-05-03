@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dental Clinic</title>
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#team">Our Team</a></li>
+				<li><a href="#contact">Contact Us</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="#">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+    <main>
+        <section id="team">
+			<h2>Our Team</h2>
+            <div class="container">
+				<ul class="container--tabs">
+                	<li class="tab tab--active">врач1</li>
+                	<li class="tab">врач2</li>
+                	<li class="tab">врач3</li>
+				</ul>
+				<div class='cotainer--content'>
+					<div class="content content--active">Тарасов Владимир Александрович - хирург, имплантолог</div>
+					<div class="content" >Леонов Артем Алексеевич - хируруг, имплантолог, ортопед</div>
+					<div class="content">Леонова Татьяна Владимировна - ортодонт</div>
+        		</div>
+			</div>
+		</section>
+    </main>
+    <footer>
+		<p>&copy; 2023 Dental Clinic. All rights reserved.</p>
+	</footer>
+	
+	<script>
+		// получаем массив всех вкладок
+		const tabs = document.querySelectorAll(".tab");
+            // получаем массив всех блоков с содержимым вкладок
+            const contents = document.querySelectorAll(".content");
+
+            // запускаем цикл для каждой вкладки и добавляем на неё событие
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener("click", ( event ) => {
+
+                    // сначала нам нужно удалить активный класс именно с вкладок
+                    let currentTabs = event.target.parentElement.children;
+                    for (let t = 0; t < currentTabs.length; t++) {
+                        currentTabs[t].classList.remove("tab--active");
+                    }
+                    // добавляем активный класс
+                    tabs[i].classList.add("tab--active");
+                    // теперь нужно удалить активный класс с блоков содержимого вкладок
+                    let tabContentChildren = event.target.parentElement.nextElementSibling.children;
+                    for (let c = 0; c < tabContentChildren.length; c++) {
+                        tabContentChildren[c].classList.remove("content--active");
+                    }
+                    // добавляем активный класс
+                    contents[i].classList.add("content--active");
+
+                });
+            }
+
+	</script>
+</body>
+</html>
