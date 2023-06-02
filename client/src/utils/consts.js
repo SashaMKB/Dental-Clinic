@@ -1,0 +1,8 @@
+export const MAIN_PAGE_ROUTE = '/'
+export const PERSONAL_ROUTE = '/personal-account'
+export const LOGIN_ROUTE = '/login'
+export const REGISTRATION_ROUTE = '/registration'
+export const APPOINTMENT_LIST_ROUTE = '/appointment-list'
+export const SET_APPOINTMENT_ROUTE = '/set-appointment'
+export const LEVEL_ROUTE = '/level/:id'
+export const ADMIN_ROUTE = '/admin'
